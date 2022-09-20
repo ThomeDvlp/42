@@ -43,9 +43,9 @@ BONUS_SRC	=	ft_lstnew.c			\
 				ft_lstdelone.c		\
 				ft_lstclear.c		\
 				ft_lstiter.c		\
-				ft_lsmap.c			
+				ft_lstmap.c			
 
-OBJ			=	$(SRC:.c=.o)
+OBJ			=	$(SRC:.c=.o) 
 
 BONUS_OBJ	=	$(BONUS_SRC:.c=.o)
 
@@ -54,7 +54,7 @@ CC			=	cc
 
 FLAGS		=	-Wall -Wextra -Werror
 
-.c.o:	
+.c.o:
 				$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
 		
 $(NAME):		$(OBJ)
@@ -62,8 +62,11 @@ $(NAME):		$(OBJ)
 
 all:			$(NAME)
 
-clean:	
-				rm -f $(OBJ)
+bonus:			$(BONUS_OBJ)
+				ar rcs $(NAME) $(BONUS_OBJ)
+
+clean:
+				rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean:			clean
 				rm -f $(NAME)	

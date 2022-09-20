@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 02:16:06 by rthome-d          #+#    #+#             */
-/*   Updated: 2022/09/05 02:20:08 by rthome-d         ###   ########.fr       */
+/*   Updated: 2022/09/19 09:35:53 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_lstsize(t_list *lst)
 	int	size;
 
 	size = 0;
-	while(lst)
+	while (lst)
 	{
 		size++;
 		lst = lst -> next;
