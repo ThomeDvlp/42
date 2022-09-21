@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 18:04:34 by rthome-d          #+#    #+#             */
-/*   Updated: 2022/09/19 18:06:13 by rthome-d         ###   ########.fr       */
+/*   Updated: 2022/09/20 23:20:15 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	while (node)
 	{
 		del(node -> content);
-		node = node -> next;
 		free(node);
+		node = node -> next;
 	}
 	*lst = (void *)0;
 }
