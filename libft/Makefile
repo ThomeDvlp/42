@@ -39,6 +39,8 @@ SRC			=	ft_isalpha.c		\
 				ft_puthex.c			\
 				ft_putnbr.c			\
 				ft_putunbr.c		\
+				
+
 BONUS_SRC	=	ft_lstnew.c			\
 				ft_lstadd_front.c	\
 				ft_lstsize.c		\

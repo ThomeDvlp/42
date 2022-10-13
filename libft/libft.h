@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 11:03:51 by rthome-d          #+#    #+#             */
-/*   Updated: 2022/09/20 18:50:26 by rthome-d         ###   ########.fr       */
+/*   Updated: 2022/10/13 15:48:45 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,13 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	**ft_split(char const *s, char c);
+
+int		ft_printf(const char *inputtype, ...);
+int		ft_putchar(char c);
+int		ft_puthex(unsigned long nbr, char *hexref);
+int		ft_putnbr(int nbr);
+int		ft_putunbr(unsigned int unbr);
+int		ft_putstr(shar *str);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
