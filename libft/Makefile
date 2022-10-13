@@ -33,8 +33,12 @@ SRC			=	ft_isalpha.c		\
 				ft_strtrim.c		\
 				ft_strmapi.c		\
 				ft_striteri.c		\
-				ft_split.c
-
+				ft_split.c			\
+				ft_printf.c			\
+				ft_putchar.c		\
+				ft_puthex.c			\
+				ft_putnbr.c			\
+				ft_putunbr.c		\
 BONUS_SRC	=	ft_lstnew.c			\
 				ft_lstadd_front.c	\
 				ft_lstsize.c		\
