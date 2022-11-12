@@ -50,7 +50,8 @@ MAKEFLAGS			=+	--silent
 
 .c.o:
 					$(CC) $(FLAGS) -I$(HEAD) -c $< -o $(<:.c=.o)
-					printf "\n[$(GREEN)OK$(NC)]		$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n\n"
+					printf "\n[$(GREEN)OK$(NC)]		
+					$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n\n"
 
 all:				$(SERVER) $(CLIENT)
 
