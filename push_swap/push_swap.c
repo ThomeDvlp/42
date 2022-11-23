@@ -51,8 +51,17 @@ int	main (int argc, char **argv)
 	return (0);
 }
 
-//checar se tem caracter proibido
-//checar se tem números repetidos
+// Usar split ou/e join_args para o argv;
+//checar se tem numero repetido
+//Checar se tem letra (* +-)
+//Checar max e min inteiro
 //verificar os formatos de entrada atômicos e compostos
 //criar array de ints com os inputs passados
 //  
+//
+//  if (check_args)
+//  {
+//		receive_values(list_a);
+//		sort();
+//		quit();
+//  }
