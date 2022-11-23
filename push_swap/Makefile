@@ -44,9 +44,11 @@ all: 			$(OBJ)
 
 
 clean:			
+				make -C $(LIB_DIR) clean
 				$(RM) *.o
 
 fclean:			clean
+				make -C $(LIB_DIR) fclean
 				$(RM) $(NAME)
 
 re:				fclean all
