@@ -26,14 +26,29 @@ SRC			=	ft_isalpha.c		\
 				ft_substr.c			\
 				ft_strjoin.c		\
 				ft_putstr_fd.c		\
+				ft_putstr.c			\
 				ft_putchar_fd.c		\
+				ft_putchar.c		\
 				ft_putnbr_fd.c		\
+				ft_putnbr.c			\
 				ft_putendl_fd.c		\
+				ft_putunbr.c		\
+				ft_puthex.c			\
+				ft_printf.c			\
 				ft_itoa.c			\
 				ft_strtrim.c		\
 				ft_strmapi.c		\
 				ft_striteri.c		\
-				ft_split.c
+				ft_split.c			\
+				ft_lstadd_back.c	\
+				ft_lstadd_front.c	\
+				ft_lstclear.c		\
+				ft_lstdelone.c		\
+				ft_lstiter.c		\
+				ft_lstlast.c		\
+				ft_lstmap.c			\
+				ft_lstnew.c			\
+				ft_lstsize.c		
 
 BONUS_SRC	=	ft_lstnew.c			\
 				ft_lstadd_front.c	\

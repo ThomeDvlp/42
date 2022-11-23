@@ -18,7 +18,7 @@ CC			=	cc
 
 FLAGS		= 	-Wall -Wextra -Werror
 
-SRC			=	push_swap.c \
+SRC			=	push_swap.c 
 
 LIBFT		=	./libft/libft.a
 
@@ -26,7 +26,7 @@ LIB_DIR		=	./libft
 
 OBJ			=	$(SRC:.c=.o)
 
-RM			=	rm -f
+RM			=	rm -fr
 
 #MAKEFLAGS	=	--silent
 
@@ -47,6 +47,6 @@ clean:
 				$(RM) *.o
 
 fclean:			clean
-				$(RM) (NAME)
+				$(RM) $(NAME)
 
 re:				fclean all

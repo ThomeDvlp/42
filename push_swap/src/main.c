@@ -12,13 +12,54 @@
 
 #include "./includes/push_swap.h"
 
-int	main (int ac, char **av)
+/*int	**ft_render_input(char **argv)
+{
+	int		index;
+	int		aux;
+	char 	**split;
+	
+	split = ft_split(argv[1], ' ');
+	index = 0;
+	while (split[index])
+	{
+		aux = 0;
+		while (aux < ft_strlen(split[index]))
+		{
+			if ((!ft_isDigit(slpit[index][aux])))
+				return (1)
+		}
+		
+	}
+	
+	return (split)
+}
+
+void	ft_is_valid(char **argv)
+{
+
+}
+
+int	main (int argc, char **argv)
 {
 	t_stack		*table
-	int	i;
-	if (ac < 2)
-		return (1);
+	int		index;
+	char 	**input_splited;
+	index = 0;
+	input_splited = ft_render_input(argv);
+	ft_printf("%s",(char *)input_splited);
+	ft_printf("Teste")
 	table = constructor(table, av);
-	
 	return (0);
+}
+*/
+
+int	main (int argc, char **argv)
+{
+	int index;
+	t_stack
+	index = -1;
+	while(argv[++index])
+	{
+
+	}
 }

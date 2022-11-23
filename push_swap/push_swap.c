@@ -11,14 +11,48 @@
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
+#include "./libft/libft.h"
 
-int	main (int ac, char **av)
+void	ft_argv_spliter (char **argv)
 {
-	t_stack		*table;
-	int	i;
-	if (ac < 2)
-		return (1);
-	table = constructor(table, av);
+	char **spiter_out;
 	
+	spiter_out = ft_split(argv[1], ' ');
+}
+
+//void	ft_checker_inputs(char **av)
+//{
+
+//}
+
+
+
+int	main (int argc, char **argv)
+{
+	int	index;
+	
+	
+
+	index = 0;
+	if (argc > 2)
+	{
+		while (argv[index])
+		{
+			ft_printf("%i\n", ft_atoi(argv[index]));
+			index++;
+		}
+	}
+
+	while (argv[index])
+	{
+
+	}
+	ft_printf("\n");
 	return (0);
 }
+
+//checar se tem caracter proibido
+//checar se tem números repetidos
+//verificar os formatos de entrada atômicos e compostos
+//criar array de ints com os inputs passados
+//  
