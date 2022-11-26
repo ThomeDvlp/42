@@ -6,21 +6,21 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:31 by rthome-d          #+#    #+#             */
-/*   Updated: 2022/11/25 18:47:13 by rthome-d         ###   ########.fr       */
+/*   Updated: 2022/11/26 18:23:29 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 # include "./libft/libft.h"
 /*
-void	ft_argv_spliter (char **argv)
+void 	**ft_argv_processor (char **argv)
 {
-	char **spiter_out;
+	char **spliter_out;
 	
 	spiter_out = ft_split(argv[1], ' ');
+	return (spliter_out);
 }
 */
-
 int	ft_isInt(char **argv)
 {
 	int index;
@@ -49,26 +49,53 @@ int	main (int argc, char **argv)
 
 	index = 0;
 	counter = 0;
+
+
 	if (argc > 2)
 	{	
-		//while(argv[++counter])
-		//{
-		//	if(ft_atoi(argv[counter]) > 2147483647 
-		//		|| ft_atoi(argv[counter]) < -2147483648)
-		//	{
-		//		ft_printf("ERROR\n");
-		//		return (1);
-		//	}
-	//	}
-
+		while(argv[++counter])
+		{
+			
+			if(ft_atoi(argv[counter]) > 2147483647 
+				|| ft_atoi(argv[counter]) < -2147483648)
+			{
+				ft_printf("ERROR\n");
+				return (1);
+			}
+		}
 		while (argv[++index])
-			ft_printf("%i\n", ft_atoi(argv[index]));
+		{
+			char **argv_splited;
+			counter = -1;
+			if(argv[index][1] != '0')
+			{
+				argv_splited = ft_split(argv[index], ' ');
+				if(ft_atoi(argv_splited[counter + 1]) > 2147483647 
+					|| ft_atoi(argv_splited[counter + 1]) < -2147483648)
+				{
+					ft_printf("ERROR\n");
+					return (1);
+				}				
+				while (argv_splited[++counter])
+					ft_printf("| %i |\n", ft_atoi(argv_splited[counter]));
+			}
+		}
+			if (argv[1][1] != '0')
+	{
+		char **argv_splited;
+
+		counter = -1;
+		argv_splited =  ft_split(argv[1], ' ');
+		while (argv_splited[++counter])
+			ft_printf("| %i |\n", ft_atoi(argv_splited[counter]));
+		return (0);
+	}
+			
 
 	}
 	return (0);
 }
 
-// Usar split ou/e join_args para o argv;
 //checar se tem numero repetido
 //Checar se tem letra (* +-)
 //verificar os formatos de entrada atômicos e compostos
