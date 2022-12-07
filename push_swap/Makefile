@@ -16,9 +16,10 @@ HEAD		=	./includes/
 
 CC			=	cc
 
-FLAGS		= 	-Wall -Wextra -Werror
+CFLAGS		= 	-Wall -Wextra -Werror -g 
 
-SRC			=	push_swap.c 
+SRC			=	push_swap.c \
+				checker.c
 
 LIBFT		=	./libft/libft.a
 
@@ -39,7 +40,7 @@ RM			=	rm -fr
 all: 			$(OBJ)
 				make -C $(LIB_DIR)
 				printf "$(SUCCESS)	libft.a created 🚀\n\n$(NC)"
-				$(CC) $(FLAGS) -I $(HEAD) -o $(NAME) $(OBJ) $(LIBFT)
+				$(CC) $(CFLAGS) -I $(HEAD) -o $(NAME) $(OBJ) $(LIBFT)
 				printf "$(SUCCESS)	push_swap ready!!! 🚀\n\n$(NC)"
 
 

@@ -67,7 +67,7 @@ BONUS_OBJ	=	$(BONUS_SRC:.c=.o)
 
 CC			=	cc
 
-FLAGS		=	-Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror -g
 
 .c.o:
 				$(CC) $(FLAGS) -c $< -o $(<:.c=.o)

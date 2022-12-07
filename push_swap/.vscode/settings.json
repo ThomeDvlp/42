@@ -2,5 +2,8 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "C_Cpp.dimInactiveRegions": false,
     "42header.email": "rthome-d@student.42.rio",
-    "42header.username": "rthome-d"
+    "42header.username": "rthome-d",
+    "files.associations": {
+        "push_swap.h": "c"
+    }
 }

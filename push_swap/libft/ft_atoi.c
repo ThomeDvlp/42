@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:46:05 by rthome-d          #+#    #+#             */
-/*   Updated: 2022/11/30 15:56:59 by rthome-d         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:32:06 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ long long int	ft_atoi(const char *str)
 							
 		}
 		else 
-			exit (0);
+			return (0);
 		str++;
 	}
 	return (res * signal_setter);
