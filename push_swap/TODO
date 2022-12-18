@@ -1,15 +1,25 @@
 validação do projeto:
--validar caso possua argumento não numérico   (ver se aceita contas e letras)                               [?]
-    -print error no terminal                                                                            
+
+
 -validar caso possua argumento repetido                                                                     [?]
     -print error no terminal                                                                                
--validar caso possua argumento numérico que ultrapasse os limites do tipo inteiro                           [?]
-    -print error no terminal                                                                                
--validar caso possua apenas um argumento e este é numérico                                                  [?]
-    -apenas encerra o programa, nada nada aparece no terminal
--validar caso não possua nenhuma argumento                                                                  [?]
-    -apenas encerra o programa, nada nada aparece no terminal
 
+-analisar se argumentos passados estão ordenados
+    -apenas encerra o programa, nada nada aparece no terminal                                               [?]
+
+
+
+
+-validar caso não possua nenhuma argumento                                                                  [x]
+    -apenas encerra o programa, nada nada aparece no terminal                                               
+-validar caso possua argumento não numérico   (ver se aceita contas e letras)                               [x]
+    -print error no terminal                                                                            
+-validar caso possua argumento numérico que ultrapasse os limites do tipo inteiro                           [x]
+    -print error no terminal                                                                                
+-validar caso possua apenas um argumento e este é numérico                                                  [x]
+    -apenas encerra o programa, nada nada aparece no terminal
+-validar caso não possua nenhuma argumento                                                                  [x]
+    -apenas encerra o programa, nada nada aparece no terminal
 retorno eseperado:
     Após todo processo de validação deve ser entregue ao programa principal uma lista de
 argumentos válidos (ainda como string), ou já convertido para int (vai da formar que achar

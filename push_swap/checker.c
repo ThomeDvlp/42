@@ -12,9 +12,7 @@
 
 #include "./includes/push_swap.h"
 
-
-
-int	is_int(char **argv_splited)
+static int	is_int(char **argv)
 {
 	int index;
 	int counter;
@@ -22,27 +20,41 @@ int	is_int(char **argv_splited)
 
 	index = -1;
 	counter = -1;
-	while (argv_splited[++index])
+	while (argv[++index])
 	{
-		nbr = ft_atoi(argv_splited[index]);
-		if ((argv_splited[index][0] == '-' || argv_splited[index][0] == '+')
-			&& argv_splited[index][1])
+		nbr = ft_atoi(argv[index]);
+		if ((argv[index][0] == '-' || argv[index][0] == '+')
+			&& argv[index][1])
 			counter ++;
-		while(argv_splited[index][++counter])
-			if(!ft_isdigit(argv_splited[index][counter]))
+		while(argv[index][++counter])
+			if(!ft_isdigit(argv[index][counter]))
 				return(0);
-		if((nbr > MAX || nbr < MIN) || ft_strlen(argv_splited[index]) > 10)
+		if((nbr > MAX || nbr < MIN) || ft_strlen(argv[index]) > 11)
 			return (0);
         counter = -1;
 	}
 	return (1);
 }
 
-//int ft_isUnique()
+
+static int is_unique(char **argv)
+{
+	int	index;
+	int	counter;
+	index = -1;
+	while (argv[++index])
+	{
+		counter = index;
+		while (argv[++counter])
+			if (!ft_strcmp(argv[index], argv[counter]))
+				return (0);
+	}
+	return (1);
+}
 
 int input_checker(char **argv)
 {
-    if(!is_int(argv))
-        return (0);
+	if(!is_int(argv) || !is_unique(argv))
+		return (0);
     return (1);
 }

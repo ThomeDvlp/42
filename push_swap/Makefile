@@ -18,8 +18,9 @@ CC			=	cc
 
 CFLAGS		= 	-Wall -Wextra -Werror -g 
 
-SRC			=	push_swap.c \
-				checker.c
+SRC			=	push_swap.c 	\
+				checker.c		
+
 
 LIBFT		=	./libft/libft.a
 
