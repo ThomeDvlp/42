@@ -6,12 +6,12 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:31 by rthome-d          #+#    #+#             */
-/*   Updated: 2022/12/19 09:24:26 by rthome-d         ###   ########.fr       */
+/*   Updated: 2022/12/19 09:45:18 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
-#include <stdio.h>
+
 
 // ./push_swap 1 3 6 4 9
 
@@ -63,7 +63,7 @@ void	print_list(t_stack **stack_a)
 	temp = *stack_a;
 	while(temp != NULL)
 	{
-		printf("nbr/: [%i]\n", temp->nbr);
+		ft_printf("nbr/: [%i]\n", temp->nbr);
 		temp = temp->next;
 	}
 }
@@ -71,14 +71,14 @@ void	print_list(t_stack **stack_a)
 int	main (int argc, char **argv)
 {
 	t_stack	*stack_a;
-	t_stack *stack_b;
+	//t_stack *stack_b;
 	
 	int	index;
 
 	index = 0;
 
 	stack_a = NULL;
-	stack_b = NULL;
+	//stack_b = NULL;
 	
 	if (argc >= 1)
 	{
