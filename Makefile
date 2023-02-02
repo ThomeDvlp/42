@@ -19,6 +19,7 @@ CC			=	cc
 CFLAGS		= 	-Wall -Wextra -Werror -g 
 
 SRC			=	push_swap.c 	\
+				constructor.c	\
 				checker.c		
 
 

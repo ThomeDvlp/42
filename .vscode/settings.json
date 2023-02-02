@@ -4,6 +4,7 @@
     "42header.email": "rthome-d@student.42.rio",
     "42header.username": "rthome-d",
     "files.associations": {
-        "push_swap.h": "c"
+        "push_swap.h": "c",
+        "chrono": "c"
     }
 }

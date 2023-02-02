@@ -51,6 +51,7 @@ void	stack_add_back(t_stack **stack, t_stack *new)
 		stack_add_back(stack_a, stack_new(ft_atoi(av[aux])));
 }
 
+/*
 void	print_list(t_stack **stack_a)
 //, int counter)
 {
@@ -63,3 +64,4 @@ void	print_list(t_stack **stack_a)
 		temp = temp->next;
 	}
 }
+*/

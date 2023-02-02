@@ -32,13 +32,13 @@ typedef struct		s_stack
 
 int 	input_checker(char **argv_splited);
 
-//t_stack	*stack_new(long long int nbr);
+t_stack	*stack_new(long long int nbr);
 
-//t_stack	*stack_last(t_stack *stack);
+t_stack	*stack_last(t_stack *stack);
 
-//void	stack_add_back(t_stack **stack, t_stack *new);
+void	stack_add_back(t_stack **stack, t_stack *new);
 
-//void 	constructor(int counter, char **av, t_stack **stack_a);
+void 	constructor(int counter, char **av, t_stack **stack_a);
 
 //void	print_list(t_stack **stack_a)
 
