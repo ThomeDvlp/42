@@ -45,23 +45,8 @@ void	stack_add_back(t_stack **stack, t_stack *new)
  void constructor(int counter, char **av, t_stack **stack_a)
 {
 	int	aux;
-	aux = 0;
+	aux = -1;
 
 	while(++aux < counter)
 		stack_add_back(stack_a, stack_new(ft_atoi(av[aux])));
 }
-
-/*
-void	print_list(t_stack **stack_a)
-//, int counter)
-{
-	t_stack *temp;
-
-	temp = *stack_a;
-	while(temp != NULL)
-	{
-		ft_printf("nbr/: [%i]\n", temp->nbr);
-		temp = temp->next;
-	}
-}
-*/

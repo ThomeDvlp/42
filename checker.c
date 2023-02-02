@@ -42,16 +42,20 @@ static int is_unique(char **argv)
 	int	index;
 	int	counter;
 	index = -1;
+
 	while (argv[++index])
 	{
 		counter = index;
 		while (argv[++counter])
-			if (!ft_strcmp(argv[index], argv[counter]))
+		{
+			if (ft_atoi(argv[index]) == ft_atoi(argv[counter]))
 				return (0);
+		}
 	}
 	return (1);
 }
 
+// {"1", "12", "234", "7", "+7"}
 int input_checker(char **argv)
 {
 	if(!is_int(argv) || !is_unique(argv))
