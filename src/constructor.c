@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "push_swap.h"
 
 t_stack	*stack_new(long long int nbr)
 {

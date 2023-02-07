@@ -6,11 +6,11 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:31 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/02 13:08:11 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:54:37 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 void print_list(t_stack **stack_a)
 {
@@ -27,21 +27,23 @@ void print_list(t_stack **stack_a)
 int main(int argc, char **argv)
 {
 	t_stack *stack_a;
-	// t_stack *stack_b;
+	t_stack *stack_b;
 
-	int index;
+	//int index;
 	char	**final_argv;
+
+
 
 	// 1 2 3 4 => argc = 4
 	// "1 2 3 4" => argc = 2
 
 	// 1 2 3 4 5 6 7 => argc = 8
-	// "1 2 3 4 5 6 7" => argc = 2
+// "1 2 3 4 5 6 7" => argc = 2
 	
-	index = 0;
+//	index = 0;
 
 	stack_a = NULL;
-	// stack_b = NULL;
+	stack_b = NULL;
 
 	if (argc >= 1)
 	{
@@ -61,10 +63,17 @@ int main(int argc, char **argv)
 			return (0);
 		}
 		// After validate if argv need to be freed or not
-		ft_printf("STACK A:\n");
+		ft_printf("STACK A:				STACK B:\n");
 		// Build a stack
 		constructor(argc - 1, final_argv, &stack_a);
 		// Stack Debugger
+		print_list(&stack_a);
+		print_list(&stack_b);
+		swap(&stack_a);
+		ft_printf("STACK A swaped:\n");
+		print_list(&stack_a);
+		rotate(&stack_a);
+		ft_printf("STACK_A rotacionated:\n");
 		print_list(&stack_a);
 		/*
 		if (argc == 4)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	is_int(char **argv)
 {

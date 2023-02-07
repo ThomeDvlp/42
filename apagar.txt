@@ -1,0 +1,57 @@
+a b c d e f g h i j k l m
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0 0 5 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 2 0 0 0 0
+0 0 3 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0
+
+
+5 k1
+ = d1
+
+
+
+1 d1
+{
+    data
+    next = i3
+}
+
+2 i3
+{
+    data
+    next = d4
+}
+
+3 c4
+{
+    data
+    next = NULL
+}
+
+após swap
+
+1 i3
+{
+    data
+    next = d1
+}
+
+2 d1
+{
+    data
+    next = c4
+}
+
+3 c4
+{
+    data
+    next = NULL
+}
+
+
+1. atualiza a cabeça = 2 nó OK
+2. segunda nó (nova cabeça) tem que apontar pro primeiro nó
+3. primeiro nó -> terceiro nó OK
+

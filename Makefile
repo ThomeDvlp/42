@@ -12,20 +12,33 @@ INFO		=	[$(ORANGE)INFO$(RESET)]
 
 NAME		=	push_swap
 
-HEAD		=	./includes/
-
 CC			=	cc
+
+PTH_INCLUDE	=	includes/
+	
 
 CFLAGS		= 	-Wall -Wextra -Werror -g 
 
-SRC			=	push_swap.c 	\
-				constructor.c	\
-				checker.c		
+INCLUDE		=	-I $(PTH_INCLUDE)
+
+SRC_OPS		=	ps_swap.c	\
+				ps_rotate.c	\
+				ps_push.c
+
+SRC_SRC		=	constructor.c \
+				push_swap.c
+
+SRC_VLD		=	checker.c 
+
+SRC			=	$(addprefix operations/,$(SRC_OPS)) \
+				$(addprefix src/, $(SRC_SRC))		\
+				$(addprefix validation/, $(SRC_VLD))
 
 
-LIBFT		=	./libft/libft.a
 
-LIB_DIR		=	./libft
+LIBFT		=	-L$(LIB_DIR) -lft
+
+LIB_DIR		=	libft
 
 OBJ			=	$(SRC:.c=.o)
 
@@ -34,15 +47,15 @@ RM			=	rm -fr
 #MAKEFLAGS	=	--silent
 
 
-# .c.o:
-# 				$(CC) $(FLAGS) -I$(HEAD) -c $< -o $(<:.c=.o)
-# 				printf "\n[$(GREEN)OK$(NC)]
-# 				$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n\n"
+.c.o:
+				$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o)
+				printf "\n[$(GREEN)OK$(NC)] \
+				$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n\n"
 
 all: 			$(OBJ)
 				make -C $(LIB_DIR)
 				printf "$(SUCCESS)	libft.a created 🚀\n\n$(NC)"
-				$(CC) $(CFLAGS) -I $(HEAD) -o $(NAME) $(OBJ) $(LIBFT)
+				$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJ) $(LIBFT)
 				printf "$(SUCCESS)	push_swap ready!!! 🚀\n\n$(NC)"
 
 
