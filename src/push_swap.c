@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:31 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/07 17:54:37 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/08 14:33:20 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,13 @@ int main(int argc, char **argv)
 		rotate(&stack_a);
 		ft_printf("STACK_A rotacionated:\n");
 		print_list(&stack_a);
+		rev_rotate(&stack_a);
+		ft_printf("STACK_A rev_rotacionated:\n");
+		print_list(&stack_a);
+		push(stack_a, stack_b);
+
+		ft_printf("STACK_A rev_rotacionated:\n");
+		print_list(&stack_b);
 		/*
 		if (argc == 4)
 			sorter_three(&stack_a);

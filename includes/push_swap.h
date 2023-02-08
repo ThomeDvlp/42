@@ -40,10 +40,16 @@ void	stack_add_back(t_stack **stack, t_stack *new);
 
 void 	constructor(int counter, char **av, t_stack **stack_a);
 
+void	push(t_stack *stack_a, t_stack *stack_b);
+
 void    swap(t_stack **stack);
 
 void	rotate(t_stack **stack);
 
-//void	print_list(t_stack **stack_a)
+void	rev_rotate(t_stack **stack);
+
+void	print_list(t_stack **stack_a);
+
+void	stack_add_front(t_stack **stack, t_stack *new);
 
 #endif

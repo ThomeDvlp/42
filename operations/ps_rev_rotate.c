@@ -10,11 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void    rev_rotate(t_stack **stack)
 {
     t_stack *tmp;
 
     tmp = *stack;
+    while(tmp->next->next)
+        tmp = tmp->next;
+    stack_add_front(stack, tmp->next);
+    tmp->next = 0;
 }

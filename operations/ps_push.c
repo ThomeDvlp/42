@@ -10,6 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
+void    push(t_stack *stack_a, t_stack *stack_b)
+{
+    t_stack *tmp;
 
+    tmp = stack_b;
+    stack_b = stack_a;
+    stack_a = stack_b->next;
+    stack_b->next = tmp;
+}

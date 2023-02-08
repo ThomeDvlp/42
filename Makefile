@@ -14,18 +14,20 @@ NAME		=	push_swap
 
 CC			=	cc
 
-PTH_INCLUDE	=	includes/
+#PTH_INCLUDE	=	includes/
 	
 
 CFLAGS		= 	-Wall -Wextra -Werror -g 
 
-INCLUDE		=	-I $(PTH_INCLUDE)
+#INCLUDE		=	-I $(PTH_INCLUDE)
 
-SRC_OPS		=	ps_swap.c	\
-				ps_rotate.c	\
+SRC_OPS		=	ps_swap.c		\
+				ps_rotate.c		\
+				ps_rev_rotate.c	\
 				ps_push.c
 
-SRC_SRC		=	constructor.c \
+SRC_SRC		=	constructor.c	\
+				stk_methods.c	\
 				push_swap.c
 
 SRC_VLD		=	checker.c 
@@ -48,14 +50,14 @@ RM			=	rm -fr
 
 
 .c.o:
-				$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $(<:.c=.o)
+				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 				printf "\n[$(GREEN)OK$(NC)] \
 				$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n\n"
 
 all: 			$(OBJ)
 				make -C $(LIB_DIR)
 				printf "$(SUCCESS)	libft.a created 🚀\n\n$(NC)"
-				$(CC) $(CFLAGS) $(INCLUDE) -o $(NAME) $(OBJ) $(LIBFT)
+				$(CC) $(CFLAGS)  -o $(NAME) $(OBJ) $(LIBFT)
 				printf "$(SUCCESS)	push_swap ready!!! 🚀\n\n$(NC)"
 
 
