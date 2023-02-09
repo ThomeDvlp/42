@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void    rotate(t_stack **stack)
+void    rotate(t_stack **stack, char stk)
 {
     t_stack *tmp;
 
@@ -29,4 +29,5 @@ void    rotate(t_stack **stack)
     *stack = (*stack)->next;
     // 
     tmp->next->next = 0;
+    ft_printf("r%c\n", stk);
 }

@@ -25,7 +25,7 @@ int stack_len (t_stack *stack)
     return (len);
 }
 
-void    swap(t_stack **stack)
+void    swap(t_stack **stack, char stk)
 {
     t_stack *tmp;
     if((*stack)->next != 0)
@@ -35,4 +35,5 @@ void    swap(t_stack **stack)
         tmp->next = (*stack)->next;
         (*stack)->next = tmp;
     }
+    ft_printf("s%c\n", stk);
 }

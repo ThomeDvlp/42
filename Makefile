@@ -27,6 +27,7 @@ SRC_OPS		=	ps_swap.c		\
 				ps_push.c
 
 SRC_SRC		=	constructor.c	\
+				index.c			\
 				stk_methods.c	\
 				push_swap.c
 
@@ -46,24 +47,24 @@ OBJ			=	$(SRC:.c=.o)
 
 RM			=	rm -fr
 
-#MAKEFLAGS	=	--silent
+MAKEFLAGS	=	--silent
 
 
 .c.o:
 				$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
-				printf "\n[$(GREEN)OK$(NC)] \
-				$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n\n"
+				printf "[$(GREEN)OK$(NC)] \
+				$(ORANGE)$(<:.c=.o)$(NC) compliled ✅\n"
 
 all: 			$(OBJ)
 				make -C $(LIB_DIR)
-				printf "$(SUCCESS)	libft.a created 🚀\n\n$(NC)"
+				printf "\n\n$(SUCCESS)	libft.a created 🚀\n\n$(NC)"
 				$(CC) $(CFLAGS)  -o $(NAME) $(OBJ) $(LIBFT)
 				printf "$(SUCCESS)	push_swap ready!!! 🚀\n\n$(NC)"
 
 
 clean:			
 				make -C $(LIB_DIR) clean
-				$(RM) *.o
+				$(RM) ${OBJ}
 
 fclean:			clean
 				make -C $(LIB_DIR) fclean

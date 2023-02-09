@@ -6,13 +6,13 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 12:39:06 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/08 13:01:07 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/09 13:19:33 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*stack_new(long long int nbr)
+t_stack	*stack_new(long long int nbr, int index)
 {
 	t_stack	*nlst;
 
@@ -20,6 +20,7 @@ t_stack	*stack_new(long long int nbr)
 	if (!nlst)
 		return (0);
 	nlst->nbr = (int)nbr;
+	nlst->index = index;
 	nlst->next = 0;
 	return (nlst);
 }
