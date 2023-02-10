@@ -12,14 +12,14 @@
 
 #include "../includes/push_swap.h"
 
-void    rev_rotate(t_stack **stack, char stk)
+void	rev_rotate(t_stack **stack, char stk)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    tmp = *stack;
-    while(tmp->next->next)
-        tmp = tmp->next;
-    stack_add_front(stack, tmp->next);
-    tmp->next = 0;
-    ft_printf("rr%c\n", (char)stk);
+	tmp = *stack;
+	while (tmp->next->next)
+		tmp = tmp->next;
+	stack_add_front (stack, tmp->next);
+	tmp->next = 0;
+	ft_printf ("rr%c\n", (char)stk);
 }

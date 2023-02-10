@@ -14,15 +14,15 @@
 
 void	push(t_stack **stack_src, t_stack **stack_dst, char stk)
 {
-    t_stack	*tmp;
-	t_stack *tmp2;
+	t_stack	*tmp;
+	t_stack	*tmp2;
 
-    if(!*stack_src)
-        return;
-    tmp = stack_new((*stack_src)->nbr, (*stack_src)->index);
+	if (!*stack_src)
+		return ;
+	tmp = stack_new((*stack_src)->nbr, (*stack_src)->index);
 	stack_add_front(stack_dst, tmp);
 	tmp2 = *stack_src;
 	*stack_src = (*stack_src)->next;
-	free(tmp2);
-    ft_printf("p%c\n", (char)stk);
+	free (tmp2);
+	ft_printf("p%c\n", (char)stk);
 }

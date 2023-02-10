@@ -14,9 +14,9 @@
 
 static int	is_int(char **argv)
 {
-	int index;
-	int counter;
-	long long nbr;
+	int			index;
+	int			counter;
+	long long	nbr;
 
 	index = -1;
 	counter = -1;
@@ -26,23 +26,22 @@ static int	is_int(char **argv)
 		if ((argv[index][0] == '-' || argv[index][0] == '+')
 			&& argv[index][1])
 			counter ++;
-		while(argv[index][++counter])
-			if(!ft_isdigit(argv[index][counter]))
-				return(0);
-		if((nbr > MAX || nbr < MIN) || ft_strlen(argv[index]) > 11)
+		while (argv[index][++counter])
+			if (!ft_isdigit(argv[index][counter]))
+				return (0);
+		if ((nbr > MAX || nbr < MIN) || ft_strlen(argv[index]) > 11)
 			return (0);
-        counter = -1;
+		counter = -1;
 	}
 	return (1);
 }
 
-
-static int is_unique(char **argv)
+static int	is_unique(char **argv)
 {
 	int	index;
 	int	counter;
-	index = -1;
 
+	index = -1;
 	while (argv[++index])
 	{
 		counter = index;
@@ -55,10 +54,28 @@ static int is_unique(char **argv)
 	return (1);
 }
 
-// {"1", "12", "234", "7", "+7"}
-int input_checker(char **argv)
+static int	is_ordered(char **argv)
 {
-	if(!is_int(argv) || !is_unique(argv))
+	int	i;
+
+	i = 0;
+	while (argv[i + 1])
+	{
+		if (ft_atoi(argv[i]) < ft_atoi(argv[i + 1]))
+			i++;
+		else
+		{
+			ft_printf("argv[i] = %s\n", argv[i]);
+			return (1);
+		}
+	}
+	return (0);
+}
+
+// {"1", "12", "234", "7", "+7"}
+int	input_checker(char **argv)
+{
+	if (!is_int(argv) || !is_unique(argv) || !is_ordered(argv))
 		return (0);
-    return (1);
+	return (1);
 }

@@ -12,22 +12,17 @@
 
 #include "../includes/push_swap.h"
 
-void    rotate(t_stack **stack, char stk)
+void	rotate(t_stack **stack, char stk)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if ((*stack)->next == 0)
-        return ;
-    // tmp taked the first element of stack
-    tmp = *stack;
-    // Tmp goin to next node until hesn't the last node
-    while (tmp->next)
-        tmp = tmp->next;
-    // The next of tmp or the "tail" of stack receive the first node as a next
-    tmp->next = *stack;
-    // With the first node "saved" like the next of tmp, we goin to avance one node in stack
-    *stack = (*stack)->next;
-    // 
-    tmp->next->next = 0;
-    ft_printf("r%c\n", stk);
+	if ((*stack)->next == 0)
+		return ;
+	tmp = *stack;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = *stack;
+	*stack = (*stack)->next;
+	tmp->next->next = 0;
+	ft_printf("r%c\n", stk);
 }

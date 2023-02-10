@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 12:39:06 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/09 13:19:33 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/10 17:38:30 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_stack	*stack_new(long long int nbr, int index)
 	nlst->next = 0;
 	return (nlst);
 }
+
 t_stack	*stack_last(t_stack *stack)
 {
 	if (!stack)
@@ -32,6 +33,7 @@ t_stack	*stack_last(t_stack *stack)
 		stack = stack->next;
 	return (stack);
 }
+
 void	stack_add_back(t_stack **stack, t_stack *new)
 {
 	t_stack	*node;
@@ -45,6 +47,6 @@ void	stack_add_back(t_stack **stack, t_stack *new)
 
 void	stack_add_front(t_stack **stack, t_stack *new)
 {
-    new->next = *stack;
-    *stack = new;
+	new->next = *stack;
+	*stack = new;
 }

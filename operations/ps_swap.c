@@ -12,28 +12,29 @@
 
 #include "../includes/push_swap.h"
 
-int stack_len (t_stack *stack)
+int	stack_len(t_stack *stack)
 {
-    int len;
+	int	len;
 
-    len = 0;
-    while(stack)
-    {
-        len++;
-        stack = stack->next;
-    }
-    return (len);
+	len = 0;
+	while (stack)
+	{
+		len++;
+		stack = stack->next;
+	}
+	return (len);
 }
 
-void    swap(t_stack **stack, char stk)
+void	swap(t_stack **stack, char stk)
 {
-    t_stack *tmp;
-    if((*stack)->next != 0)
-    {
-        tmp = *stack;
-        *stack = (*stack)->next;
-        tmp->next = (*stack)->next;
-        (*stack)->next = tmp;
-    }
-    ft_printf("s%c\n", stk);
+	t_stack	*tmp;
+
+	if ((*stack)->next != 0)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		tmp->next = (*stack)->next;
+		(*stack)->next = tmp;
+	}
+	ft_printf("s%c\n", stk);
 }
