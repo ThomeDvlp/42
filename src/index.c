@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:11:34 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/09 19:44:19 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/10 15:04:39 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,26 @@ int		*ar_index(int argc, char **argv)
 void	index_populate(int argc, int *ar_index, t_stack **stack_a)
 {
 	int i;
+    t_stack *tmp;
 
-	i = 0;
+    tmp = *stack_a;
+
+	
+    
 	while ((*stack_a)->next)
 	{
+        i = 0;
 		while(i <= argc - 2)
 		{
-			if((*stack_a)->nbr != ar_index[i])
+			if((*stack_a)->nbr == ar_index[i])
+            {
 				(*stack_a)->index = i;
+                break;
+            }
+            i++;
 		}
-		i++;
+		
 		*stack_a = (*stack_a)->next;
 	}
+    *stack_a = tmp;
 }

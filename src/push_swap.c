@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:31 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/09 19:37:27 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/10 13:40:34 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void print_list(t_stack **stack_a)
 	while (temp != NULL)
 	{
 		ft_printf("nbr/: [%i]\n", temp->nbr);
+		ft_printf("index/: [%i]\n", temp->index);
 		temp = temp->next;
 	}
 }
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
 	t_stack *stack_b;
 
 	char	**final_argv;
-
+	int i = 0;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -58,8 +59,13 @@ int main(int argc, char **argv)
 		ft_printf("STACK A:				STACK B:\n");
 		// Build a stack
 		constructor(argc - 1, final_argv, &stack_a);
-		ar_index(argc, final_argv);
-		index_populate(argc, ar_index(argc, final_argv), &stack_a);
+		int *list = ar_index(argc, final_argv);
+		while (i <= argc - 2)
+			{
+				ft_printf("%i\n", list[i]);
+				i++;
+			}
+		index_populate(argc, list, &stack_a);
 		// Stack Debugger
 		print_list(&stack_a);
 		print_list(&stack_b);
