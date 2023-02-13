@@ -28,6 +28,7 @@ SRC_OPS		=	ps_swap.c		\
 
 SRC_SRC		=	constructor.c	\
 				index.c			\
+				organizer.c		\
 				stk_methods.c	\
 				push_swap.c
 

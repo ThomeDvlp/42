@@ -12,11 +12,12 @@
 
 #include "../includes/push_swap.h"
 
-void	constructor(int counter, char **av, t_stack **stack_a)
+void	constructor(int argc, char **av, t_stack **stack_a)
 {
 	int	aux;
 
 	aux = -1;
-	while (++aux < counter)
+	while (++aux < argc)
 		stack_add_back(stack_a, stack_new(ft_atoi(av[aux]), 0));
+	index_populate(argc, ar_index(argc, av), stack_a);
 }

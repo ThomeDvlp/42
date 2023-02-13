@@ -5,6 +5,8 @@
     "42header.username": "rthome-d",
     "files.associations": {
         "push_swap.h": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "memory": "c",
+        "utility": "c"
     }
 }

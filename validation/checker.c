@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-static int	is_int(char **argv)
+static int	is_int(char **av)
 {
 	int			index;
 	int			counter;
@@ -20,52 +20,58 @@ static int	is_int(char **argv)
 
 	index = -1;
 	counter = -1;
-	while (argv[++index])
+	while (av[++index])
 	{
-		nbr = ft_atoi(argv[index]);
-		if ((argv[index][0] == '-' || argv[index][0] == '+')
-			&& argv[index][1])
+		nbr = ft_atoi(av[index]);
+		while ((av[index][0] == '-' || av[index][0] == '+') && av[index][1])
 			counter ++;
-		while (argv[index][++counter])
-			if (!ft_isdigit(argv[index][counter]))
+		while (av[index][++counter])
+		{
+			if ((!ft_isdigit(av[index][counter]))
+				|| ((nbr > MAX || nbr < MIN) || ft_strlen(av[index]) > 11))
+			{
+				ft_printf("Error\n");
 				return (0);
-		if ((nbr > MAX || nbr < MIN) || ft_strlen(argv[index]) > 11)
-			return (0);
+			}
+		}
 		counter = -1;
 	}
 	return (1);
 }
 
-static int	is_unique(char **argv)
+static int	is_unique(char **av)
 {
 	int	index;
 	int	counter;
 
 	index = -1;
-	while (argv[++index])
+	while (av[++index])
 	{
 		counter = index;
-		while (argv[++counter])
+		while (av[++counter])
 		{
-			if (ft_atoi(argv[index]) == ft_atoi(argv[counter]))
+			if (ft_atoi(av[index]) == ft_atoi(av[counter]))
+			{
+				ft_printf("Error\n");
 				return (0);
+			}
 		}
 	}
 	return (1);
 }
 
-static int	is_ordered(char **argv)
+static int	is_ordered(char **av)
 {
 	int	i;
 
 	i = 0;
-	while (argv[i + 1])
+	while (av[i + 1])
 	{
-		if (ft_atoi(argv[i]) < ft_atoi(argv[i + 1]))
+		if (ft_atoi(av[i]) < ft_atoi(av[i + 1]))
 			i++;
 		else
 		{
-			ft_printf("argv[i] = %s\n", argv[i]);
+			ft_printf("\n");
 			return (1);
 		}
 	}
@@ -73,9 +79,9 @@ static int	is_ordered(char **argv)
 }
 
 // {"1", "12", "234", "7", "+7"}
-int	input_checker(char **argv)
+int	input_checker(char **av)
 {
-	if (!is_int(argv) || !is_unique(argv) || !is_ordered(argv))
+	if (!is_int(av) || !is_unique(av) || !is_ordered(av))
 		return (0);
 	return (1);
 }

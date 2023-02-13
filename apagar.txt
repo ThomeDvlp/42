@@ -55,3 +55,31 @@ após swap
 2. segunda nó (nova cabeça) tem que apontar pro primeiro nó
 3. primeiro nó -> terceiro nó OK
 
+		print_list(&stack_a);
+		print_list(&stack_b);
+		swap(&stack_a, 'a');
+		ft_printf("STACK A swaped:\n");
+		print_list(&stack_a);
+		rotate(&stack_a, 'a');
+		ft_printf("STACK_A rotacionated:\n");
+		print_list(&stack_a);
+		rev_rotate(&stack_a, 'a');
+		ft_printf("STACK_A rev_rotacionated:\n");
+		print_list(&stack_a);
+		push(&stack_a, &stack_b, 'b');
+		ft_printf("STACK_A after push:\n");
+		print_list(&stack_a);
+		ft_printf("STACK_B pushed:\n");
+		print_list(&stack_b);
+		push(&stack_a, &stack_b, 'b');
+		ft_printf("STACK_A after push:\n");
+		print_list(&stack_a);
+		ft_printf("STACK_B pushed:\n");
+		print_list(&stack_b);		
+		push(&stack_a, &stack_b, 'b');
+		ft_printf("STACK_A after push:\n");
+		print_list(&stack_a);
+		ft_printf("STACK_B pushed:\n");
+		print_list(&stack_b);
+
+		

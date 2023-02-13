@@ -6,10 +6,71 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:00:34 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/10 18:42:57 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/12 23:43:05 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	
+void	two(t_stack *stack_a)
+{
+	swap(&stack_a, 'a');
+}
+
+void	three(t_stack *stack_a)
+{
+	int	n1;
+	int	n2;
+	int	n3;
+
+	n1 = stack_a->nbr;
+	n2 = stack_a->next->nbr;
+	n3 = stack_a->next->next->nbr;
+	if (n1 < n2 && n1 < n3 && n2 > n3)
+	{
+		swap(&stack_a, 'a');
+		rotate(&stack_a, 'a');
+	}
+	if (n1 > n2 && n1 < n3 && n2 < n3)
+		swap(&stack_a, 'a');
+	if (n1 < n2 && n1 > n3 && n2 > n3)
+		rev_rotate(&stack_a, 'a');
+	if (n1 > n2 && n1 > n3 && n2 > n3)
+	{
+		swap(&stack_a, 'a');
+		rev_rotate(&stack_a, 'a');
+	}
+	if (n1 > n2 && n1 > n3 && n2 < n3)
+		rotate(&stack_a, 'a');
+}
+
+void	four(t_stack *stack_a, t_stack *stack_b)
+{
+	ft_printf("Stack_a \n");
+	print_list(&stack_a);
+	while ((*stack_a).index != 0)
+		rotate(&stack_a, 'a');
+	push(&stack_a, &stack_b, 'b');
+	//push(&stack_a, &stack_b, 'b');
+	ft_printf("stack_a \n");
+	print_list(&stack_a);
+	ft_printf("Stack_b \n");
+	print_list(&stack_b);
+	three(stack_a);
+	//push(&stack_b, &stack_a, 'a');
+	push(&stack_b, &stack_a, 'a');
+		ft_printf("Stack_b \n");
+	print_list(&stack_b);
+	ft_printf("stack_a \n");
+	print_list(&stack_a);
+}
+
+void	organizer(int argc, t_stack **stack_a, t_stack **stack_b)
+{
+	if (argc - 1 == 2)
+		two(*stack_a);
+	if (argc - 1 == 3)
+		three(*stack_a);
+	if (argc - 1 == 4)
+		four(*stack_a, *stack_b);
+}
