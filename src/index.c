@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 17:11:34 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/10 18:26:34 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/13 23:14:11 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ void	index_populate(int argc, int *ar_index, t_stack **stack_a)
 		j++;
 	}
 	*stack_a = tmp;
+	free(ar_index);
 }

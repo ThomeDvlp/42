@@ -6,12 +6,13 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:59:31 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/12 22:08:55 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/14 14:48:54 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
 void	print_list(t_stack **stack_a)
 {
 	t_stack	*temp;
@@ -20,10 +21,10 @@ void	print_list(t_stack **stack_a)
 	while (temp != NULL)
 	{
 		ft_printf("nbr/: [%i]\n", temp->nbr);
-		//ft_printf("index/: [%i]\n", temp->index);
+		ft_printf("index/: [%i]\n", temp->index);
 		temp = temp->next;
 	}
-}
+}*/
 
 int	main(int argc, char **argv)
 {
@@ -33,7 +34,7 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc >= 1)
+	if (argc > 1)
 	{
 		if (argc == 2)
 		{
@@ -51,5 +52,6 @@ int	main(int argc, char **argv)
 		index_populate(argc, ar_index(argc, final_argv), &stack_a);
 		organizer(argc, &stack_a, &stack_b);
 	}
+	free_stk(&stack_a)cd;
 	return (0);
 }

@@ -30,6 +30,8 @@ SRC_SRC		=	constructor.c	\
 				index.c			\
 				organizer.c		\
 				stk_methods.c	\
+				radix.c			\
+				free.c			\
 				push_swap.c
 
 SRC_VLD		=	checker.c 

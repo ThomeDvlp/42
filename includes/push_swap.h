@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/12 20:23:13 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/12 19:31:54 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/13 23:29:12 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,9 @@ void	index_populate(int argc, int *ar_index, t_stack **stack_a);
 void	two(t_stack *stack_a);
 
 void	three(t_stack *stack_a);
+
+void	radix(int argc, t_stack **stack_a, t_stack **stack_b);
+
+void    free_stk(t_stack **stack_a);
 
 #endif
