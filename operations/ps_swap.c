@@ -27,7 +27,7 @@ int	stack_len(t_stack *stack)
 
 void	swap(t_stack **stack, char stk)
 {
-	int aux;
+	int	aux;
 
 	if ((*stack)->next != 0)
 	{

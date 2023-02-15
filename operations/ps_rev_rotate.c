@@ -14,20 +14,6 @@
 
 void	rev_rotate(t_stack **stack, char stk)
 {
-/* 	int 
-
-	
-
-	if(!(*stack)->next)
-		return;
-	else
-	{
-		while(tmp->next)
-			tmp = tmp->next;
-		while((*stack)->next)
-			(*stack)->next = 0;
-		
-	} */
 	int nbr_aux1;
 	int nbr_aux2;
 	int idx_aux1;

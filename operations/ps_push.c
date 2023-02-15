@@ -18,7 +18,8 @@ void	push(t_stack **stack_src, t_stack **stack_dst, char stk)
 
 	if (!*stack_src)
 		return ;
-	stack_add_front(stack_dst, stack_new((long long int)(*stack_src)->nbr, (*stack_src)->index));
+	stack_add_front(stack_dst, stack_new((*stack_src)->nbr,
+			(*stack_src)->index));
 	tmp = *stack_src;
 	*stack_src = (*stack_src)->next;
 	free (tmp);

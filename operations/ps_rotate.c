@@ -14,12 +14,13 @@
 
 void	rotate(t_stack **stack, char stk)
 {
-	t_stack *tmp = 0;
+	t_stack *tmp;
 	int nbr_aux;
 	int idx_aux;
 
 	nbr_aux = (*stack)->nbr;
 	idx_aux = (*stack)->index;
+	tmp = NULL;
 	if(!(*stack)->next)
 	{
 		(*stack)->nbr = nbr_aux;
@@ -38,6 +39,5 @@ void	rotate(t_stack **stack, char stk)
 		(*stack)->nbr = nbr_aux;
 		*stack = tmp;
 	}
-	free (tmp);
 	ft_printf("r%c\n", stk);
 }
