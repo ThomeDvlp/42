@@ -68,11 +68,9 @@ static int	is_ordered(char **av)
 		else
 			return (0);
 	}
-	ft_printf("\n");
 	return (1);
 }
 
-// {"1", "12", "234", "7", "+7"}
 int	input_checker(char **av)
 {
 	if (!av[0])
@@ -86,6 +84,6 @@ int	input_checker(char **av)
 		return (0);
 	}
 	else if (is_ordered(av))
-		return (1);
+		return (0);
 	return (1);
 }

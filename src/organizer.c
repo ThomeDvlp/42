@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:00:34 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/13 20:31:23 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:25:16 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	two(t_stack *stack_a)
 {
 	swap(&stack_a, 'a');
+	free (stack_a);
 }
 
 void	three(t_stack *stack_a)
@@ -48,9 +49,10 @@ void	four(t_stack *stack_a, t_stack *stack_b)
 {
 	while ((*stack_a).index != 0)
 		rotate(&stack_a, 'a');
-	push(&stack_a, &stack_b, 'b');
-	three(stack_a);
-	push(&stack_b, &stack_a, 'a');
+ 	push(&stack_a, &stack_b, 'b');  
+ 	three(stack_a);  
+ 	push(&stack_b, &stack_a, 'a');  
+
 }
 
 void	five(t_stack *stack_a, t_stack *stack_b)

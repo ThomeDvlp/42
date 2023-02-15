@@ -14,12 +14,44 @@
 
 void	rev_rotate(t_stack **stack, char stk)
 {
-	t_stack	*tmp;
+/* 	int 
 
-	tmp = *stack;
-	while (tmp->next->next)
-		tmp = tmp->next;
-	stack_add_front (stack, tmp->next);
-	tmp->next = 0;
+	
+
+	if(!(*stack)->next)
+		return;
+	else
+	{
+		while(tmp->next)
+			tmp = tmp->next;
+		while((*stack)->next)
+			(*stack)->next = 0;
+		
+	} */
+	int nbr_aux1;
+	int nbr_aux2;
+	int idx_aux1;
+	int idx_aux2;
+
+	t_stack *tmp = *stack;
+
+	if((*stack)->next)
+	{
+		nbr_aux1 = (*stack)->nbr;
+		idx_aux1 = (*stack)->index;
+		while ((*stack)->next)
+		{
+			*stack = (*stack)->next;
+			nbr_aux2 = (*stack)->nbr;
+			(*stack)->nbr = nbr_aux1;
+			nbr_aux1 = nbr_aux2;
+			idx_aux2 = (*stack)->index;
+			(*stack)->index = idx_aux1;
+			idx_aux1 = idx_aux2;
+		}
+		*stack = tmp;
+		(*stack)->index = idx_aux1;
+		(*stack)->nbr = nbr_aux1;
+	} 
 	ft_printf ("rr%c\n", (char)stk);
 }

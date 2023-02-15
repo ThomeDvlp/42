@@ -19,5 +19,5 @@ void	constructor(int argc, char **av, t_stack **stack_a)
 	aux = -1;
 	while (++aux < argc)
 		stack_add_back(stack_a, stack_new(ft_atoi(av[aux]), 0));
-	index_populate(argc, ar_index(argc, av), stack_a);
+
 }

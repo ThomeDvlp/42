@@ -27,14 +27,16 @@ int	stack_len(t_stack *stack)
 
 void	swap(t_stack **stack, char stk)
 {
-	t_stack	*tmp;
+	int aux;
 
 	if ((*stack)->next != 0)
 	{
-		tmp = *stack;
-		*stack = (*stack)->next;
-		tmp->next = (*stack)->next;
-		(*stack)->next = tmp;
+		aux = (*stack)->nbr;
+		(*stack)->nbr = (*stack)->next->nbr;
+		(*stack)->next->nbr = aux;
+		aux = (*stack)->index;
+		(*stack)->index = (*stack)->next->index;
+		(*stack)->next->index = aux;
 	}
 	ft_printf("s%c\n", stk);
 }
