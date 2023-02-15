@@ -12,16 +12,29 @@
 
 #include "../includes/push_swap.h"
 
+void	rtt_oparations(t_stack ***stack, t_stack **tmp, int nbr, int idx)
+{
+	while ((*stack[0])->next)
+	{
+		(*stack[0])->index = (*stack[0])->next->index;
+		(*stack[0])->nbr = (*stack[0])->next->nbr;
+		*stack[0] = (*stack[0])->next;
+	}
+	(*stack[0])->index = idx;
+	(*stack[0])->nbr = nbr;
+	*stack[0] = tmp[0];
+}
+
 void	rotate(t_stack **stack, char stk)
 {
-	t_stack *tmp;
-	int nbr_aux;
-	int idx_aux;
+	t_stack	*tmp;
+	int		nbr_aux;
+	int		idx_aux;
 
 	nbr_aux = (*stack)->nbr;
 	idx_aux = (*stack)->index;
 	tmp = NULL;
-	if(!(*stack)->next)
+	if (!(*stack)->next)
 	{
 		(*stack)->nbr = nbr_aux;
 		(*stack)->next = NULL;
@@ -29,15 +42,7 @@ void	rotate(t_stack **stack, char stk)
 	else
 	{
 		tmp = *stack;
-		while ((*stack)->next)
-		{
-			(*stack)->index = (*stack)->next->index;
-			(*stack)->nbr = (*stack)->next->nbr;
-			*stack = (*stack)->next;
-		}
-		(*stack)->index = idx_aux;
-		(*stack)->nbr = nbr_aux;
-		*stack = tmp;
+		rtt_oparations(&stack, &tmp, nbr_aux, idx_aux);
 	}
 	ft_printf("r%c\n", stk);
 }

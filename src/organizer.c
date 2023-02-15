@@ -6,7 +6,7 @@
 /*   By: rthome-d <rthome-d@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:00:34 by rthome-d          #+#    #+#             */
-/*   Updated: 2023/02/15 13:37:16 by rthome-d         ###   ########.fr       */
+/*   Updated: 2023/02/15 17:54:13 by rthome-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	two(t_stack *stack_a)
 {
 	swap(&stack_a, 'a');
-	free (stack_a);
 }
 
 void	three(t_stack **stack_a)

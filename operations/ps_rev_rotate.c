@@ -12,32 +12,36 @@
 
 #include "../includes/push_swap.h"
 
+void	rev_operations(t_stack ***stack, t_stack **tmp)
+{
+	int	nbr_aux1;
+	int	nbr_aux2;
+	int	idx_aux1;
+	int	idx_aux2;
+
+	nbr_aux1 = (*stack[0])->nbr;
+	idx_aux1 = (*stack[0])->index;
+	while ((*stack[0])->next)
+	{
+		*stack[0] = (*stack[0])->next;
+		nbr_aux2 = (*stack[0])->nbr;
+		(*stack[0])->nbr = nbr_aux1;
+		nbr_aux1 = nbr_aux2;
+		idx_aux2 = (*stack[0])->index;
+		(*stack[0])->index = idx_aux1;
+		idx_aux1 = idx_aux2;
+	}
+	*stack[0] = tmp[0];
+	(*stack[0])->index = idx_aux1;
+	(*stack[0])->nbr = nbr_aux1;
+}	
+
 void	rev_rotate(t_stack **stack, char stk)
 {
-	int nbr_aux1;
-	int nbr_aux2;
-	int idx_aux1;
-	int idx_aux2;
+	t_stack	*tmp;
 
-	t_stack *tmp = *stack;
-
-	if((*stack)->next)
-	{
-		nbr_aux1 = (*stack)->nbr;
-		idx_aux1 = (*stack)->index;
-		while ((*stack)->next)
-		{
-			*stack = (*stack)->next;
-			nbr_aux2 = (*stack)->nbr;
-			(*stack)->nbr = nbr_aux1;
-			nbr_aux1 = nbr_aux2;
-			idx_aux2 = (*stack)->index;
-			(*stack)->index = idx_aux1;
-			idx_aux1 = idx_aux2;
-		}
-		*stack = tmp;
-		(*stack)->index = idx_aux1;
-		(*stack)->nbr = nbr_aux1;
-	} 
+	tmp = *stack;
+	if ((*stack)->next)
+		rev_operations(&stack, &tmp);
 	ft_printf ("rr%c\n", (char)stk);
 }
